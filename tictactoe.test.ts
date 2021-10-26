@@ -24,11 +24,13 @@ test('I can start a game', async () => {
 test('Play top left square', async () => {
     
     let leftSquare = await (await driver).findElement(By.id("cell-0"));
-    await leftSquare.click();
+    await leftSquare.getText();
+    expect(leftSquare).toEqual('X');
     
     await driver.sleep(2000)
     
 }),
+
 
 test('Play top right square', async () => {
 
